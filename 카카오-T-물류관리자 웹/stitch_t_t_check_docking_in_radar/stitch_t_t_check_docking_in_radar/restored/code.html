@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kakao T Freight - My Page</title>
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2dfde",
+                        "on-tertiary-fixed-variant": "#00522a",
+                        "tertiary-fixed": "#84faab",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#eeeeef",
+                        "primary-container": "#fee500",
+                        "outline": "#7c775f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1d",
+                        "primary": "#6a5f00",
+                        "secondary": "#5f5e5e",
+                        "surface": "#f9f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#201c00",
+                        "on-secondary-container": "#636262",
+                        "surface-dim": "#dadadb",
+                        "inverse-primary": "#dec800",
+                        "outline-variant": "#cdc7aa",
+                        "surface-container-high": "#e8e8e9",
+                        "surface-variant": "#e2e2e3",
+                        "tertiary-container": "#84fbab",
+                        "tertiary-fixed-dim": "#67dd91",
+                        "on-surface-variant": "#4b4732",
+                        "inverse-surface": "#2f3132",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#006d3a",
+                        "on-primary-fixed-variant": "#504700",
+                        "on-tertiary-fixed": "#00210d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#6a5f00",
+                        "surface-bright": "#f9f9fa",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#dec800",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#716600",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#fde400",
+                        "on-tertiary-container": "#00743e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "touch-target-min": "52px",
+                        "sidebar-width": "240px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-[100px] md:pb-0 md:pl-sidebar-width flex flex-col antialiased">
+<!-- Mobile Header (Contextual) -->
+<header class="flex md:hidden items-center justify-center h-[64px] bg-surface border-b border-outline-variant px-margin-mobile sticky top-0 z-40">
+<h1 class="font-title-md text-title-md text-on-surface">마이</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-6 space-y-6">
+<!-- Profile Section -->
+<section class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-center gap-4">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-surface-container-highest" data-alt="A professional, high-key light mode portrait of a reliable middle-aged truck driver wearing a clean uniform. The background is a soft, minimalist white, reflecting a corporate modernism aesthetic. The lighting is soft and flattering, creating an atmosphere of trust and effortless reliability. The composition is clean, with the subject looking confidently forward." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Ak3Wa35GL0Ohp0quICds0AkJoe1OCPo6I22ME33dz_ozGOW1h2Xz9TEMWR_wgrdR7DBJdcMvic95P0XeNRM77UqLxATy9W3JTQZOiGYZsBRpGeWPS0A_2mEKZbznRXvw4WYmnUoaVw2R95e7Q1QVodOU_Ar5QPh7jfPwl05y-lEdYXai2PHglJttnbg26auSjp-OFSDI50aX5XfGXpDRA6mEXrgZwho_FswAza9Q2T0h4N_QLg9V">
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+                    김철수
+                    <span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</h2>
+<div class="mt-1 inline-flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">local_shipping</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5톤 카고</span>
+</div>
+</div>
+<button class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</section>
+<!-- Stats Grid (Bento style) -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Stat Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary">이번 달 운송</span>
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">inventory_2</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">21</span>
+<span class="font-body-md text-body-md text-on-surface-variant">건</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary">총 운행거리</span>
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">route</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">1,482</span>
+<span class="font-body-md text-body-md text-on-surface-variant">km</span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary">평균 대기</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">timer</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-title-md text-title-md text-on-surface">24</span>
+<span class="font-body-md text-body-md text-on-surface-variant">분</span>
+</div>
+</div>
+<!-- Stat Card 4 (Highlight/Warning) -->
+<div class="bg-surface border border-outline-variant rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary">30분 초과 대기</span>
+<div class="w-8 h-8 rounded-full bg-error-container/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-title-md text-title-md text-error">3</span>
+<span class="font-body-md text-body-md text-on-surface-variant">건</span>
+</div>
+</div>
+</section>
+<!-- Recent History List -->
+<section class="space-y-4">
+<h3 class="font-title-md text-title-md text-on-surface">최근 운송 내역</h3>
+<div class="space-y-3">
+<!-- History Card 1 -->
+<article class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-4">
+<div class="flex items-center justify-between mb-3">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">완료</span>
+<span class="font-label-sm text-label-sm text-secondary">10. 24 (목)</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="flex flex-col items-center mt-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-0.5 h-6 bg-outline-variant my-1"></div>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div class="flex-1 space-y-3">
+<div>
+<p class="font-body-md text-body-md text-secondary">상차지</p>
+<p class="font-title-md text-title-md text-on-surface">경기 평택시 포승읍</p>
+</div>
+<div>
+<p class="font-body-md text-body-md text-secondary">하차지</p>
+<p class="font-title-md text-title-md text-on-surface">부산 강서구 송정동</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- History Card 2 -->
+<article class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-4">
+<div class="flex items-center justify-between mb-3">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">완료</span>
+<span class="font-label-sm text-label-sm text-secondary">10. 22 (화)</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="flex flex-col items-center mt-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-0.5 h-6 bg-outline-variant my-1"></div>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div class="flex-1 space-y-3">
+<div>
+<p class="font-body-md text-body-md text-secondary">상차지</p>
+<p class="font-title-md text-title-md text-on-surface">인천 서구 오류동</p>
+</div>
+<div>
+<p class="font-body-md text-body-md text-secondary">하차지</p>
+<p class="font-title-md text-title-md text-on-surface">충남 천안시 서북구</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+<button class="w-full h-touch-target-min flex items-center justify-center bg-surface border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface hover:bg-surface-container transition-colors">
+                더보기
+            </button>
+</section>
+</main>
+<!-- Shared Component: BottomNavBar (Mobile Only) -->
+<!-- Active State Logic: '마이' is active based on context -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-safe bg-surface/90 backdrop-blur-md border-t border-outline-variant shadow-lg z-50 h-[80px]">
+<!-- Tab 1: 홈 (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary px-6 py-2 active:bg-surface-container-highest touch-targets min-h-[52px] active:scale-95 transition-transform rounded-xl">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-sm text-label-sm mt-1">홈</span>
+</button>
+<!-- Tab 2: 화물 (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary px-6 py-2 active:bg-surface-container-highest touch-targets min-h-[52px] active:scale-95 transition-transform rounded-xl">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+<span class="font-label-sm text-label-sm mt-1">화물</span>
+</button>
+<!-- Tab 3: 내 운송 (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary px-6 py-2 active:bg-surface-container-highest touch-targets min-h-[52px] active:scale-95 transition-transform rounded-xl">
+<span class="material-symbols-outlined text-[24px]">history</span>
+<span class="font-label-sm text-label-sm mt-1">내 운송</span>
+</button>
+<!-- Tab 4: 마이 (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 active:bg-surface-container-highest touch-targets min-h-[52px] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm mt-1 font-bold">마이</span>
+</button>
+</nav>
+</body></html>

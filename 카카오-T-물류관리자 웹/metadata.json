@@ -1,0 +1,6 @@
+{
+  "name": "카카오 T 화물 관리자 관제 웹 시스템",
+  "description": "실시간 화물 배차 관제, Geofence GPS 위치 모니터링, T-Check 센터 도킹 점검 및 국세청 전자 세금계산서 정산 웹 콘솔",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

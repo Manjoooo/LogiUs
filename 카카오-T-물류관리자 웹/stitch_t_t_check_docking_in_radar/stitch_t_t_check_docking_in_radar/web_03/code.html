@@ -1,0 +1,456 @@
+<!DOCTYPE html><html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kakao T Freight - 긴급 이슈 대응</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8e9",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-surface": "#1a1c1d",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dadadb",
+                      "primary": "#6a5f00",
+                      "on-tertiary-fixed": "#00210d",
+                      "outline-variant": "#cdc7aa",
+                      "primary-container": "#fee500",
+                      "primary-fixed": "#fde400",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#6a5f00",
+                      "outline": "#7c775f",
+                      "background": "#f9f9fa",
+                      "surface-container": "#eeeeef",
+                      "on-tertiary-container": "#00743e",
+                      "tertiary-container": "#84fbab",
+                      "on-surface-variant": "#4b4732",
+                      "tertiary-fixed-dim": "#67dd91",
+                      "surface": "#f9f9fa",
+                      "inverse-primary": "#dec800",
+                      "on-secondary-container": "#636262",
+                      "inverse-on-surface": "#f0f1f2",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#504700",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#84faab",
+                      "primary-fixed-dim": "#dec800",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-container": "#e2dfde",
+                      "secondary": "#5f5e5e",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-container-highest": "#e2e2e3",
+                      "tertiary": "#006d3a",
+                      "on-background": "#1a1c1d",
+                      "on-primary-fixed": "#201c00",
+                      "surface-variant": "#e2e2e3",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f9f9fa",
+                      "on-primary-container": "#716600",
+                      "inverse-surface": "#2f3132",
+                      "on-tertiary-fixed-variant": "#00522a",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f3f4",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "16px",
+                      "touch-target-min": "52px",
+                      "margin-desktop": "32px",
+                      "sidebar-width": "240px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "26px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cdc7aa;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c775f;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex overflow-hidden">
+<!-- Desktop Sidebar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col h-full py-margin-desktop bg-surface dark:bg-surface-dim font-body-md text-body-md docked w-sidebar-width h-screen left-0 border-r border-outline-variant dark:border-outline flat no shadows shrink-0 absolute z-10">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0 shadow-sm">
+  <span class="material-symbols-outlined text-white" style="font-size: 24px;">local_shipping</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface dark:text-on-surface">카카오 T 화물</h1>
+<p class="font-label-sm text-label-sm text-secondary">물류 관리자</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="">관제 현황</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="">실시간 운송</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span class="">이슈 대응</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="">T-Check 관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="">차주 내부관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="dock">dock</span>
+<span class="">도크 관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+<span class="">화주 현황</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="">리포트</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors Active: opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="">시스템 설정</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen md:ml-sidebar-width w-full overflow-hidden bg-background">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-margin-desktop bg-surface dark:bg-surface-dim font-title-md text-title-md docked full-width top-0 h-[64px] border-b border-outline-variant dark:border-outline flat no shadows shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-on-surface hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center gap-2 text-secondary">
+<span class="font-label-sm text-label-sm">이슈 대응</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">긴급 이슈 상세 (KA-1025)</span>
+</div>
+<h1 class="md:hidden font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">KA-1025 이슈</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="w-64 pl-10 pr-4 py-2 bg-surface-container border-none rounded-full font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary transition-all" placeholder="운송 ID 검색..." type="text">
+</div>
+<button class="p-2 text-on-surface hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-full transition-all Focus: ring-2 ring-primary relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface hover:bg-surface-container-low dark:hover:bg-surface-container-high rounded-full transition-all Focus: ring-2 ring-primary hidden sm:block">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant ml-2 hidden sm:block">
+<img alt="Manager Profile" class="w-full h-full object-cover" data-alt="A small profile thumbnail of a professional logistics manager, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuf64F_n8kPxUc4Sh50-OphyiWSl6UevSsdQLKp1gobDRH5l1HkF9vyn4HcusSdy_ALpXCEM1kNsiPgA8KvNCM0afHuSYQ2zN4j5TWYXeG-L6luFGpvhWvlh52PGo3xXw4p1Pe2LUZ_UGvd4ejRdJBet3e3WalNnSJIlaWf_YPKpcMy4FJboccJALe1Y470nivzpty56xuH0U_asQnoUIpXQnr-PKEhEsyRLXNc9sVtNnkzyE94sjp">
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
+<div class="max-w-6xl mx-auto space-y-6 pb-24 md:pb-8">
+<!-- Critical Alert Banner -->
+<div class="bg-[#fff1f0] border border-[#ffccc7] rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#f5222d]"></div>
+<div class="flex items-center gap-3 z-10">
+<div class="w-10 h-10 rounded-full bg-[#ffccc7] flex items-center justify-center text-[#cf1322] shrink-0">
+<span class="material-symbols-outlined" data-weight="fill">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-xs font-bold bg-[#ff4d4f] text-white tracking-wide">CRITICAL</span>
+<h2 class="font-title-md text-title-md text-[#820014] font-bold">도착 지연 경고: KA-1025</h2>
+</div>
+<p class="font-body-md text-body-md text-[#a8071a] mt-1">+35분 지연 예상 <span class="line-through opacity-70 ml-1">14:35</span> <span class="font-bold ml-1">15:10</span></p>
+</div>
+</div>
+<div class="flex gap-2 w-full sm:w-auto z-10">
+<button class="flex-1 sm:flex-none px-4 py-2 bg-white border border-[#ffa39e] text-[#cf1322] font-label-sm text-label-sm font-semibold rounded-lg hover:bg-[#fff1f0] transition-colors text-center">차주 연락</button>
+<button class="flex-1 sm:flex-none px-4 py-2 bg-[#f5222d] text-white font-label-sm text-label-sm font-semibold rounded-lg hover:bg-[#cf1322] transition-colors text-center shadow-sm">즉시 조치</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Evidence & Cause (7 cols) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- AI Analysis Card -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">AI 원인 분석</h3>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant mb-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5">traffic</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-1">근본 원인</h4>
+<p class="font-title-md text-title-md text-on-surface font-semibold">교통정체 (근거 충분)</p>
+</div>
+</div>
+</div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-3 uppercase tracking-wider">판단 근거 (Evidence)</h4>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="bg-surface border border-outline-variant rounded-lg p-3">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm">데이터</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">ETA 기준 초과</p>
+<div class="w-full bg-surface-container-high h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-error w-[85%] h-full"></div>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-3">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span class="font-label-sm text-label-sm">현장 제보</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">교통정체 보고</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">14:04 수신</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-3">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-[18px]">route</span>
+<span class="font-label-sm text-label-sm">GPS 패턴</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">이동 패턴 변화</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">평균속도 12km/h</p>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm">
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-6">탐지 및 보고 타임라인</h3>
+<div class="relative pl-6 border-l-2 border-surface-container-high space-y-6">
+<div class="relative">
+<div class="absolute -left-[31px] bg-error rounded-full p-1 border-2 border-surface">
+<div class="w-2 h-2 bg-white rounded-full"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-1">
+<span class="font-label-sm text-label-sm font-bold text-error">14:15 (현재)</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">도크 충돌 위험 감지</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">시스템이 D07 도크에서의 일정 중복을 경고함.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] bg-primary rounded-full p-1 border-2 border-surface">
+<div class="w-2 h-2 bg-white rounded-full"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-1">
+<span class="font-label-sm text-label-sm font-bold text-secondary">14:04</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">차주 현장 제보 수신</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">앱을 통해 "전방 사고로 인한 극심한 정체" 텍스트 제보.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] bg-secondary-fixed-dim rounded-full p-1 border-2 border-surface">
+<div class="w-2 h-2 bg-white rounded-full"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-1">
+<span class="font-label-sm text-label-sm font-bold text-secondary">13:50</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">이동 패턴 이상 감지</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">고속도로 진입 후 평균 속도 급감 (80km/h → 15km/h).</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Impact & Response (5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Impact Assessment -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-error-container rounded-bl-full -z-0 opacity-50 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-error">crisis_alert</span>
+                                    영향도 평가 (IMPACT)
+                                </h3>
+<div class="bg-white border border-error/20 rounded-lg p-4 mb-4 shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm text-secondary">예정 도크</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface bg-surface-container px-2 py-0.5 rounded">D07</span>
+</div>
+<p class="font-title-md text-title-md text-error font-semibold text-center py-2 border-y border-dashed border-error/30 my-2">
+                                        도크 일정 중복 발생
+                                    </p>
+<div class="flex justify-between items-center mt-2">
+<span class="font-label-sm text-label-sm text-secondary">예상 대기 시간 증분</span>
+<span class="font-label-sm text-label-sm font-bold text-error bg-error-container px-2 py-0.5 rounded">+22분</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">현재 ETA 15:10 적용 시, D07 도크의 다음 예약 차량(KA-2109)과 하역 작업 시간이 겹칩니다.</p>
+</div>
+</section>
+<!-- Response Action -->
+<section class="bg-[#1a1c1d] rounded-xl p-6 shadow-lg text-white">
+<h3 class="font-title-md text-title-md font-bold text-[#fde400] mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">bolt</span>
+                                권장 대응 방안 (RESPONSE)
+                            </h3>
+<div class="space-y-4">
+<div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/20">
+<div class="flex items-start gap-3">
+<div class="mt-1 bg-[#fee500] text-[#1a1c1d] rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-white mb-1">도크 변경 <span class="bg-[#84fbab] text-[#00210d] text-[10px] px-1.5 py-0.5 rounded ml-2 uppercase font-bold tracking-wider">AI 추천</span></h4>
+<p class="font-title-md text-title-md font-bold text-white">D07 <span class="material-symbols-outlined align-middle mx-1 text-secondary-fixed-dim text-lg">arrow_forward</span> D08</p>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim mt-2">D08 도크는 15:00~16:00 사이 유휴 상태입니다.</p>
+</div>
+</div>
+</div>
+<div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/20">
+<div class="flex items-start gap-3">
+<div class="mt-1 bg-[#fee500] text-[#1a1c1d] rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-white mb-1">ETA 공식 조정</h4>
+<p class="font-body-md text-body-md text-white">시스템 ETA <span class="font-bold text-[#fde400]">+30분</span> 일괄 조정 적용</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 bg-[#fee500] hover:bg-[#fde400] text-[#1a1c1d] font-title-md text-title-md font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                                추천 방안 일괄 적용
+                            </button>
+<p class="text-center font-label-sm text-label-sm text-secondary-fixed-dim mt-3">적용 시 차주 및 창고 관리자에게 알림이 발송됩니다.</p>
+</section>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-safe bg-surface/90 backdrop-blur-md font-label-sm text-label-sm fixed bottom-0 w-full z-50 h-[80px] border-t border-outline-variant dark:border-outline bg-surface/90 backdrop-blur-md shadow-lg Touch targets min-h-[52px] active:scale-95 transition-transform">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 active:bg-surface-container-highest min-h-[52px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 active:bg-surface-container-highest min-h-[52px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="local_shipping">local_shipping</span>
+<span class="">화물</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 active:bg-surface-container-highest min-h-[52px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history" data-weight="fill">history</span>
+<span class="font-bold">내 운송</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 active:bg-surface-container-highest min-h-[52px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="">마이</span>
+</a>
+</nav>
+
+
+</body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>대시보드 - 카카오 T 화물 (화주용)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e2dfde",
+                      "on-tertiary-fixed-variant": "#00522a",
+                      "tertiary-fixed": "#84faab",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container": "#eeeeef",
+                      "primary-container": "#fee500",
+                      "outline": "#7c775f",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1a1c1d",
+                      "primary": "#6a5f00",
+                      "secondary": "#5f5e5e",
+                      "surface": "#f9f9fa",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f3f3f4",
+                      "background": "#f9f9fa",
+                      "on-primary-fixed": "#201c00",
+                      "on-secondary-container": "#636262",
+                      "surface-dim": "#dadadb",
+                      "inverse-primary": "#dec800",
+                      "outline-variant": "#cdc7aa",
+                      "surface-container-high": "#e8e8e9",
+                      "surface-variant": "#e2e2e3",
+                      "tertiary-container": "#84fbab",
+                      "tertiary-fixed-dim": "#67dd91",
+                      "on-surface-variant": "#4b4732",
+                      "inverse-surface": "#2f3132",
+                      "on-secondary-fixed-variant": "#474746",
+                      "tertiary": "#006d3a",
+                      "on-primary-fixed-variant": "#504700",
+                      "on-tertiary-fixed": "#00210d",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-tint": "#6a5f00",
+                      "surface-bright": "#f9f9fa",
+                      "on-background": "#1a1c1d",
+                      "primary-fixed-dim": "#dec800",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e2e2e3",
+                      "on-primary-container": "#716600",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#fde400",
+                      "on-tertiary-container": "#00743e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "touch-target-min": "52px",
+                      "sidebar-width": "240px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "title-md": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #F7F7F8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex min-h-screen">
+<!-- Desktop SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen left-0 fixed w-sidebar-width bg-surface dark:bg-surface-dim border-r border-outline-variant py-margin-desktop z-50">
+<div class="px-6 mb-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">카카오 T 화물</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">화주 전용</p>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 space-y-1"><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 transition-colors opacity-100" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+<span class="font-body-md text-body-md">전체 현황</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high transition-colors opacity-80" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">실시간 운송</span>
+</a></nav>
+<div class="px-6 mt-auto"><div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq1gC1V9cED8-aLq9s6lZ8o-Q64xZ_a6eF01kP1xX0f1l2G9c98K9d3D2wZ_7rJ03rWvN6zR7lF_9M957Q91G7s9bZ09L6aHwN1MhW7Lp9l_3Zc_bZlq66Oq357x5T1mG2t44C4w_73V9vG42x9Zq38qI9X0_1Y7o0zM1hB">
+</div>
+<div><p class="font-body-md text-body-md font-semibold text-on-surface">김카카오 화주</p><p class="font-label-sm text-label-sm text-primary">내 정보</p></div>
+</div></div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 w-full md:ml-sidebar-width min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-desktop py-4 bg-surface/90 backdrop-blur-md sticky top-0 z-40 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-on-surface rounded-full hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-title-md text-title-md text-on-surface">대시보드</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-64 h-10 pl-10 pr-4 bg-surface-container-low border-none rounded-full font-body-md text-body-md focus:ring-2 focus:ring-primary focus:bg-surface transition-all" placeholder="오더 ID, 차주 검색..." type="text">
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden hidden md:block ml-2 border border-outline-variant">
+<img alt="User Profile Top" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq1gC1V9cED8-aLq9s6lZ8o-Q64xZ_a6eF01kP1xX0f1l2G9c98K9d3D2wZ_7rJ03rWvN6zR7lF_9M957Q91G7s9bZ09L6aHwN1MhW7Lp9l_3Zc_bZlq66Oq357x5T1mG2t44C4w_73V9vG42x9Zq38qI9X0_1Y7o0zM1hB">
+</div>
+</div>
+</header>
+<div class="p-4 md:p-margin-desktop max-w-7xl mx-auto space-y-6">
+<!-- KPIs Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">이번 주 등록</p>
+<span class="material-symbols-outlined text-primary">add_box</span>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">18<span class="font-title-md text-title-md text-on-surface-variant ml-1">건</span></p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">운송 중</p>
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">7<span class="font-title-md text-title-md text-on-surface-variant ml-1">건</span></p>
+<div class="mt-2 w-full bg-surface-container-highest rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">정시 도착률</p>
+<span class="material-symbols-outlined text-tertiary">schedule</span>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">93<span class="font-title-md text-title-md text-on-surface-variant ml-1">%</span></p>
+<p class="font-label-sm text-label-sm text-tertiary mt-1 flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">trending_up</span> +2.1% 전주 대비</p>
+</div>
+<div class="bg-surface border border-outline-variant rounded-xl p-5 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">평균 T-Check</p>
+<span class="material-symbols-outlined text-tertiary">verified</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface mt-2 mb-1">안정 화물</p>
+<div class="flex gap-1">
+<div class="h-2 w-8 bg-tertiary rounded-full"></div>
+<div class="h-2 w-8 bg-tertiary rounded-full"></div>
+<div class="h-2 w-8 bg-tertiary rounded-full"></div>
+<div class="h-2 w-8 bg-surface-container-highest rounded-full"></div>
+<div class="h-2 w-8 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Active Freight Table / Cards -->
+<section class="bg-surface border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h3 class="font-title-md text-title-md text-on-surface">진행중인 오더</h3>
+<button class="font-label-sm text-label-sm font-semibold text-secondary flex items-center hover:text-on-surface transition-colors">
+                        전체보기 <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest border-b border-outline-variant">
+<th class="py-3 px-5 font-label-sm text-label-sm text-on-surface-variant font-medium">오더 ID</th>
+<th class="py-3 px-5 font-label-sm text-label-sm text-on-surface-variant font-medium">차량 정보</th>
+<th class="py-3 px-5 font-label-sm text-label-sm text-on-surface-variant font-medium">상차지 → 하차지</th>
+<th class="py-3 px-5 font-label-sm text-label-sm text-on-surface-variant font-medium">상태</th>
+<th class="py-3 px-5 font-label-sm text-label-sm text-on-surface-variant font-medium">예상 시간</th>
+<th class="py-3 px-5 text-right font-label-sm text-label-sm text-on-surface-variant font-medium">액션</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant bg-surface">
+<!-- Delayed Order -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-5">
+<span class="font-body-md text-body-md font-semibold text-on-surface">KA-1025</span>
+</td>
+<td class="py-4 px-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<!-- Note: Prompt requested Emerald truck -->
+<img alt="Emerald Truck" class="w-full h-full object-cover" data-alt="A clean, flat isometric 2.5D illustration of an emerald green 5-ton cargo truck. White minimal background, corporate modern style, professional logistics aesthetic. High contrast, sharp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDExheZepUQg8JpHK-5G9mZI87W2LzsbGwAVyXEseR4hyxxYdSyXYBEBQxGpUSIkc6eL1E7Uaavo5kjY5KIftuEcFUHWozyNnzlq0KLFX568k0NDMD9QM8E7I-TT-ddztEfmSl54FOuiFCf0yGUIAK8lrn3KctpXDcnSGjSSeLk_HuAGHNiiE9WR2GZM4YgFYb4P6z_PhevzHu5qGYY4nf1Xgmc7aW7xMDP_Qj5Y-ENgAwxGbgSI2IB">
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">5톤 윙바디</p>
+</div>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface">경기 평택 <span class="material-symbols-outlined text-[14px] text-outline mx-1 align-middle">arrow_forward</span> 부산 신항</p>
+</td>
+<td class="py-4 px-5">
+<span class="inline-flex items-center px-2 py-1 rounded-sm bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                                        지연 발생
+                                    </span>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface">14:30 <span class="text-error font-medium">(+45분)</span></p>
+</td>
+<td class="py-4 px-5 text-right">
+<button class="px-4 py-2 bg-surface border border-outline-variant rounded-md font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        상세보기
+                                    </button>
+</td>
+</tr>
+<!-- Normal Order -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-5">
+<span class="font-body-md text-body-md font-semibold text-on-surface">KA-1026</span>
+</td>
+<td class="py-4 px-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<span class="material-symbols-outlined text-secondary">local_shipping</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">11톤 카고</p>
+</div>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface">인천 서구 <span class="material-symbols-outlined text-[14px] text-outline mx-1 align-middle">arrow_forward</span> 대전 대덕</p>
+</td>
+<td class="py-4 px-5">
+<span class="inline-flex items-center px-2 py-1 rounded-sm bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+                                        운송 중
+                                    </span>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface">16:00 도착 예정</p>
+</td>
+<td class="py-4 px-5 text-right">
+<button class="px-4 py-2 bg-surface border border-outline-variant rounded-md font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        상세보기
+                                    </button>
+</td>
+</tr>
+<!-- Pending Order -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-5">
+<span class="font-body-md text-body-md font-semibold text-on-surface">KA-1027</span>
+</td>
+<td class="py-4 px-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-container flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-outline">hourglass_empty</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">배차 대기</p>
+</div>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface">서울 송파 <span class="material-symbols-outlined text-[14px] text-outline mx-1 align-middle">arrow_forward</span> 경기 광주</p>
+</td>
+<td class="py-4 px-5">
+<span class="inline-flex items-center px-2 py-1 rounded-sm bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">
+                                        배차 대기
+                                    </span>
+</td>
+<td class="py-4 px-5">
+<p class="font-body-md text-body-md text-on-surface-variant">-</p>
+</td>
+<td class="py-4 px-5 text-right">
+<button class="px-4 py-2 bg-surface border border-outline-variant rounded-md font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        상세보기
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar for Mobile (Hidden on Desktop) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-safe border-t border-outline-variant bg-surface/90 backdrop-blur-md shadow-lg z-50 h-[80px]">
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 touch-target-min active:scale-95 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">홈</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 touch-target-min active:scale-95 transition-transform">
+<span class="material-symbols-outlined icon-fill">local_shipping</span>
+<span class="font-label-sm text-label-sm mt-1">화물</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 touch-target-min active:scale-95 transition-transform">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-sm text-label-sm mt-1">내 운송</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-6 py-2 touch-target-min active:scale-95 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">마이</span>
+</button>
+</nav>
+
+
+</body></html>

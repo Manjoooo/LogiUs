@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>T-Check란? - 카카오 T 화물</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2dfde",
+                        "on-tertiary-fixed-variant": "#00522a",
+                        "tertiary-fixed": "#84faab",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#eeeeef",
+                        "primary-container": "#fee500",
+                        "outline": "#7c775f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1d",
+                        "primary": "#6a5f00",
+                        "secondary": "#5f5e5e",
+                        "surface": "#f9f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#201c00",
+                        "on-secondary-container": "#636262",
+                        "surface-dim": "#dadadb",
+                        "inverse-primary": "#dec800",
+                        "outline-variant": "#cdc7aa",
+                        "surface-container-high": "#e8e8e9",
+                        "surface-variant": "#e2e2e3",
+                        "tertiary-container": "#84fbab",
+                        "tertiary-fixed-dim": "#67dd91",
+                        "on-surface-variant": "#4b4732",
+                        "inverse-surface": "#2f3132",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#006d3a",
+                        "on-primary-fixed-variant": "#504700",
+                        "on-tertiary-fixed": "#00210d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#6a5f00",
+                        "surface-bright": "#f9f9fa",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#dec800",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#716600",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#fde400",
+                        "on-tertiary-container": "#00743e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "touch-target-min": "52px",
+                        "sidebar-width": "240px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Web Side Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-full py-margin-desktop bg-surface border-r border-outline-variant w-sidebar-width h-screen fixed left-0 top-0 z-40">
+<div class="px-gutter mb-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">카카오 T 화물</h1>
+<p class="font-body-md text-body-md text-secondary mt-1">물류 관리자</p>
+</div>
+<ul class="flex-1 overflow-y-auto">
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">dashboard</span>
+                    관제 현황
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">local_shipping</span>
+                    실시간 운송
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">report_problem</span>
+                    이슈 대응
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-primary font-bold border-r-4 border-primary bg-primary-container/10 font-body-md text-body-md opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    T-Check 관리
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">person_search</span>
+                    차주 내부관리
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">dock</span>
+                    도크 관리
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">business</span>
+                    화주 현황
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">assessment</span>
+                    리포트
+                </a>
+</li>
+<li>
+<a class="flex items-center px-gutter py-3 text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined mr-4">settings</span>
+                    시스템 설정
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Top App Bar (Web) -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop ml-sidebar-width bg-surface border-b border-outline-variant h-[64px] fixed top-0 w-[calc(100%-240px)] z-30">
+<div>
+<!-- Breadcrumbs or context could go here, leaving empty for clean look as per T-Check guide context -->
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary outline-none">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary outline-none">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container ml-2">
+<img alt="Manager Profile" class="w-full h-full object-cover" data-alt="A small, professional circular profile portrait of an Asian male logistics manager wearing a neat collared shirt. He looks approachable and competent. The lighting is bright and clean, typical of a modern office environment. The background is a soft, blurred neutral tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDds0Zy3d869TaYT0fUPupplKKLcZf0yt9v3R36mOWm3l-J-0F54W9Oq_0m36OcfpaevVqwUJnJr8zz7BTy6LjqqMJz-z0pF-E9CthCl7KC8PRYb6P2mB9UaHoACyAxh3oo1aCANBZzxVrRQIlv8htrjfgt4icw0leunEGuTroGxqXpOYJUbVfhHWQc9jBrXaiG22O8ZPwU7l-ROkwAiWkliMraQJSeSNZ2QgoiOWnaZPTsXvmA2wbE">
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="md:ml-sidebar-width md:pt-[64px] pb-[80px] md:pb-0 px-margin-mobile md:px-margin-desktop py-8 max-w-3xl mx-auto">
+<!-- Mobile Header (Back button context) -->
+<div class="md:hidden flex items-center mb-6">
+<button class="p-2 -ml-2 text-on-surface hover:bg-surface-container-low rounded-full transition-all touch-target-min flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-on-surface ml-2">T-Check 안내</h1>
+</div>
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 md:p-8 mb-8 shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">T-Check란?</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                실제 운송 경험을 바탕으로 등록된 화물 정보의 신뢰 수준을 보여주는 지표입니다.
+            </p>
+</section>
+<section class="mb-10">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 border-b border-outline-variant pb-2">신뢰도 등급</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Level 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col items-center text-center transition-transform hover:border-primary">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-secondary text-2xl">info</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">정보 확인</span>
+</div>
+<!-- Level 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col items-center text-center transition-transform hover:border-primary">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-secondary text-2xl">fiber_new</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">새 화물</span>
+</div>
+<!-- Level 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col items-center text-center transition-transform hover:border-primary">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-secondary text-2xl">check_circle</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">확인된 화물</span>
+</div>
+<!-- Level 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col items-center text-center transition-transform hover:border-primary">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-2xl">security</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">안정 화물</span>
+</div>
+<!-- Level 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col items-center text-center transition-transform hover:border-primary">
+<div class="w-16 h-16 bg-primary-container/20 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">신뢰 화물</span>
+</div>
+<!-- Level 6 -->
+<div class="bg-surface-container-lowest border-2 border-primary rounded-lg p-4 flex flex-col items-center text-center bg-primary-container/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-[10px] px-2 py-1 rounded-bl-lg">MAX</div>
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-on-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<span class="font-title-md text-title-md text-on-primary-container font-bold">믿고 운송</span>
+</div>
+</div>
+</section>
+<section class="bg-surface border border-outline-variant rounded-xl p-6">
+<h3 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+                주요 평가 항목
+            </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-lg">route</span>
+<div>
+<strong class="font-body-md text-body-md text-on-surface block mb-1">운송 거리 및 경로 정확도</strong>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">실제 이동 데이터와 등록된 경로의 일치율을 분석합니다.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-lg">schedule</span>
+<div>
+<strong class="font-body-md text-body-md text-on-surface block mb-1">상/하차 시간 준수율</strong>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">약속된 상하차 시간 내 처리 완료 여부를 평가합니다.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-lg">fact_check</span>
+<div>
+<strong class="font-body-md text-body-md text-on-surface block mb-1">화물 정보 일치도</strong>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">무게, 규격 등 사전 등록 정보와 현장 확인 정보의 차이를 비교합니다.</p>
+</div>
+</li>
+</ul>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile only) -->
+<!-- Suppressed entirely as this is a detail/guide page per instructions: "Task-Focused: Any sub-page featuring a 'Close' or 'Back' action that implies a temporary departure from the main navigation flow." -->
+</body></html>

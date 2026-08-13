@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>화주 화물 상세 - 카카오 T 화물</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2dfde",
+                        "on-tertiary-fixed-variant": "#00522a",
+                        "tertiary-fixed": "#84faab",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#eeeeef",
+                        "primary-container": "#fee500",
+                        "outline": "#7c775f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1d",
+                        "primary": "#6a5f00",
+                        "secondary": "#5f5e5e",
+                        "surface": "#f9f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#201c00",
+                        "on-secondary-container": "#636262",
+                        "surface-dim": "#dadadb",
+                        "inverse-primary": "#dec800",
+                        "outline-variant": "#cdc7aa",
+                        "surface-container-high": "#e8e8e9",
+                        "surface-variant": "#e2e2e3",
+                        "tertiary-container": "#84fbab",
+                        "tertiary-fixed-dim": "#67dd91",
+                        "on-surface-variant": "#4b4732",
+                        "inverse-surface": "#2f3132",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#006d3a",
+                        "on-primary-fixed-variant": "#504700",
+                        "on-tertiary-fixed": "#00210d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#6a5f00",
+                        "surface-bright": "#f9f9fa",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#dec800",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#716600",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#fde400",
+                        "on-tertiary-container": "#00743e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "touch-target-min": "52px",
+                        "sidebar-width": "240px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f9f9fa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- Desktop SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-margin-desktop fixed w-sidebar-width left-0 top-0 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline z-40">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface dark:text-on-surface">카카오 T 화물</h1>
+<p class="font-label-sm text-label-sm text-secondary">화주</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1"><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors font-body-md text-body-md" href="#"><span class="material-symbols-outlined">grid_view</span>전체 현황</a><a class="flex items-center gap-4 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 transition-colors font-body-md text-body-md opacity-80" href="#"><span class="material-symbols-outlined">local_shipping</span>실시간 운송</a></nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A detailed 50-100 word prompt describing a professional corporate portrait of a logistics manager in a light-mode setting. The portrait features a clean, well-lit face with a neutral expression, against a crisp white background. The subject is wearing business casual attire. The lighting is soft and even, typical of modern corporate headshots, conveying trust and reliability within the Kakao T logistics ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnlEtXVlmOav5ciXAVks3HYNQh8P-u4gWe9cck4Z3UdeTCO3mOMsDw2IomLG77EEpbAx_pdzIdFiAp425z_Zcm_fV2Xb8uFFNIg0yNCHeCcAUjT9ZD4EJmj7RxlIKKH4aeBQSg9DSvD4ogINsOqiEverbFp4dM6k0i82m22OUQZzEc0N0uU2WZgGFALQ8pAho_tZOTx1gn0H2i2-Q7v4gWrn7kpA4IMnrEAuNOt-HW1aNqjHh1THdJ"/>
+</div>
+<div><p class="font-body-md text-body-md font-semibold">김카카오 화주</p><p class="font-label-sm text-label-sm text-secondary">내 정보</p></div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop h-[64px] bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">화물 상세 내역</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all text-on-surface-variant focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all text-on-surface-variant focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Mobile Header (Visible only on mobile if implemented, but task focuses on desktop context. Included for responsive completeness) -->
+<header class="md:hidden flex justify-between items-center px-4 h-[56px] bg-surface border-b border-outline-variant sticky top-0 z-30">
+<button class="p-2 -ml-2 text-on-surface-variant">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface truncate">KA-1025 상세</h2>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 p-4 md:p-margin-desktop overflow-y-auto bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto space-y-6">
+<!-- Order Header & Status -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">KA-1025</span>
+<span class="px-2.5 py-1 bg-[#25A55F]/10 rounded-full font-label-sm text-label-sm text-[#25A55F] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 신뢰 화물
+                            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">[Emerald Truck] 5톤 냉동탑차 운송건</h1>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 bg-white border border-[#E8E8EA] rounded-lg font-body-md text-body-md text-[#191919] font-medium hover:bg-surface-container-low transition-colors">
+                            운송장 다운로드
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Map & Delay Info (Span 8) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Delay Alert Card (Urgent) -->
+<div class="bg-[#F04452]/5 border border-[#F04452]/20 rounded-xl p-4 md:p-6 flex items-start gap-4">
+<div class="p-2 bg-[#F04452]/10 rounded-full text-[#F04452] shrink-0 mt-1">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md font-semibold text-[#F04452] mb-1">도착 지연 예상</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">
+                                    현재 구간 <span class="font-bold text-on-surface">교통정체</span>로 인해 하차지 도착 시간이 지연될 예정입니다.
+                                </p>
+<div class="flex items-center gap-4 text-sm bg-white p-3 rounded-lg border border-[#E8E8EA] inline-flex">
+<div class="flex flex-col">
+<span class="text-secondary text-xs">기존 ETA</span>
+<span class="font-semibold text-on-surface line-through decoration-secondary">14:35</span>
+</div>
+<span class="material-symbols-outlined text-secondary">arrow_right_alt</span>
+<div class="flex flex-col">
+<span class="text-[#F04452] text-xs font-medium">변경 ETA</span>
+<span class="font-bold text-[#F04452] text-lg">15:10</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Location Map -->
+<div class="bg-white rounded-xl border border-[#E8E8EA] overflow-hidden flex flex-col h-[400px]">
+<div class="p-4 border-b border-[#E8E8EA] flex justify-between items-center bg-surface-container-lowest">
+<h3 class="font-title-md text-title-md font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">my_location</span>
+                                    실시간 차량 위치
+                                </h3>
+<span class="text-sm text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    실시간 연동 중
+                                </span>
+</div>
+<!-- Map Placeholder -->
+<div class="flex-1 relative bg-surface-container" data-location="Seoul">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-60" data-alt="A detailed 50-100 word prompt describing a modern, high-tech digital map interface in light mode. The map shows a clean, simplified street layout of a major city with subtle gray and white tones. A bright blue route line winds through the streets, ending at a distinct destination marker. A small truck icon represents the current vehicle location. The overall aesthetic is clean, corporate, and functional, fitting a professional logistics dashboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE0HnCCRqQLe2WDyvtH4Xy_JB9PIuoqrfDBjH17aUO7s9a5sWauhbJGDJG426kekQJnwXRAVTCMRKHqWIxZQL5tzjowJriWgurdEPeQkTZxUnPM5cidc6G0DdSyMOkkFCRQSkZIcOCOTpbZ18sp7H5uMrnYFBboatT8zZwznnfxnr8c27a4DCFLeDVp5LhWiNVG_jGHmAy9JD-s_8hzYvgWURtLjE-D7K1ljlAtWc7uYbHUC-JTAYS')"></div>
+<!-- Overlay UI on map -->
+<div class="absolute bottom-4 left-4 right-4 md:right-auto md:w-[320px] bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-[#E8E8EA]">
+<div class="flex justify-between items-start mb-2">
+<p class="font-body-md text-body-md text-secondary">현재 위치</p>
+<span class="px-2 py-0.5 bg-primary-container rounded text-xs font-semibold text-[#191919]">운행 중</span>
+</div>
+<p class="font-title-md text-title-md font-semibold text-on-surface mb-1">경부고속도로 하행선</p>
+<p class="font-body-md text-body-md text-on-surface-variant">남사IC 인근 (하차지까지 45km)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline & Info (Span 4) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Progress Timeline Card -->
+<div class="bg-white rounded-xl border border-[#E8E8EA] p-6">
+<h3 class="font-title-md text-title-md font-semibold mb-6">운송 진행률</h3>
+<div class="relative pl-6 space-y-8 before:absolute before:inset-0 before:ml-[11px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-surface-container-high">
+<!-- Step 1: Done -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white bg-[#25A55F] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute -left-[11px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] p-0">
+<div class="flex flex-col">
+<time class="text-xs text-secondary font-medium">10:00</time>
+<span class="font-body-md text-body-md font-semibold text-on-surface">상차 완료</span>
+</div>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white bg-primary-container text-[#191919] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute -left-[11px] ring-4 ring-primary-container/20">
+<div class="w-2 h-2 rounded-full bg-[#191919]"></div>
+</div>
+<div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] p-0">
+<div class="flex flex-col">
+<time class="text-xs text-secondary font-medium">현재</time>
+<span class="font-body-md text-body-md font-bold text-on-surface">운행 중</span>
+<span class="text-xs text-[#F04452] mt-0.5">지연 발생</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white bg-surface-container-high text-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute -left-[11px]">
+</div>
+<div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] p-0 opacity-50">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-secondary">하차지 접근</span>
+</div>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white bg-surface-container-high text-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute -left-[11px]">
+</div>
+<div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] p-0 opacity-50">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-secondary">하차 진행</span>
+</div>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white bg-surface-container-high text-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute -left-[11px]">
+</div>
+<div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] p-0 opacity-50">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-secondary">운송 완료</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dock & Logistics Info Card -->
+<div class="bg-white rounded-xl border border-[#E8E8EA] overflow-hidden">
+<div class="p-4 bg-surface-container-low border-b border-[#E8E8EA]">
+<h3 class="font-title-md text-title-md font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface">warehouse</span>
+                                    하차지 정보
+                                </h3>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<p class="text-xs text-secondary mb-1">도착지 센터</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">용인 메가허브 물류센터</p>
+<p class="text-sm text-on-surface-variant mt-0.5">경기 용인시 처인구 백암면 고안로 51</p>
+</div>
+<div class="pt-4 border-t border-[#E8E8EA]">
+<div class="flex justify-between items-center bg-primary-container/10 p-3 rounded-lg border border-primary-container/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">dock</span>
+<span class="font-body-md text-body-md font-medium">배정 도크 (업데이트됨)</span>
+</div>
+<span class="font-title-md text-title-md font-bold text-[#191919] px-2 py-1 bg-white rounded shadow-sm">D08</span>
+</div>
+<p class="text-xs text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                                        지연으로 인해 하차 도크가 변경되었습니다.
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Cargo Details Summary -->
+<div class="bg-white rounded-xl border border-[#E8E8EA] p-5">
+<h3 class="font-title-md text-title-md font-semibold mb-4">화물 정보 요약</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 border-b border-[#E8E8EA] last:border-0">
+<span class="text-sm text-secondary">품목</span>
+<span class="font-body-md text-body-md font-medium">냉동식품 (혼적)</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-[#E8E8EA] last:border-0">
+<span class="text-sm text-secondary">총 중량</span>
+<span class="font-body-md text-body-md font-medium">4.2t</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-[#E8E8EA] last:border-0">
+<span class="text-sm text-secondary">온도 조건</span>
+<span class="font-body-md text-body-md font-medium text-blue-600">-18℃ 이하 유지</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

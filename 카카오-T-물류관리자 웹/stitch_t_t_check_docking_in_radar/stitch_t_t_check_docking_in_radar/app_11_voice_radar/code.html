@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="ko" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>음성 제보 확인 - 카카오 T 화물</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#6a5f00",
+                        "on-secondary-container": "#636262",
+                        "surface-dim": "#dadadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-bright": "#f9f9fa",
+                        "surface-tint": "#6a5f00",
+                        "on-tertiary-fixed": "#00210d",
+                        "inverse-primary": "#dec800",
+                        "secondary": "#5f5e5e",
+                        "on-surface-variant": "#4b4732",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-fixed-variant": "#504700",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006d3a",
+                        "tertiary-fixed": "#84faab",
+                        "tertiary-fixed-dim": "#67dd91",
+                        "primary-container": "#fee500",
+                        "surface-container-high": "#e8e8e9",
+                        "secondary-container": "#e2dfde",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eeeeef",
+                        "on-tertiary-container": "#00743e",
+                        "primary-fixed": "#fde400",
+                        "on-surface": "#1a1c1d",
+                        "background": "#f9f9fa",
+                        "surface-variant": "#e2e2e3",
+                        "on-background": "#1a1c1d",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "outline": "#7c775f",
+                        "on-tertiary-fixed-variant": "#00522a",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3132",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#716600",
+                        "primary-fixed-dim": "#dec800",
+                        "surface-container-low": "#f3f3f4",
+                        "surface": "#f9f9fa",
+                        "on-primary-fixed": "#201c00",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#84fbab",
+                        "outline-variant": "#cdc7aa",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "sidebar-width": "240px",
+                        "margin-desktop": "32px",
+                        "touch-target-min": "52px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-[80px]">
+<!-- TopAppBar (Transactional - simplified) -->
+<header class="bg-surface border-b border-outline-variant h-[64px] flex items-center px-margin-mobile sticky top-0 z-50">
+<button class="mr-4 text-on-surface flex items-center justify-center min-h-touch-target-min min-w-[52px]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface flex-1">음성 제보 확인</h1>
+<button class="text-on-surface flex items-center justify-center min-h-touch-target-min min-w-[52px]">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<main class="p-margin-mobile max-w-2xl mx-auto space-y-6">
+<!-- Vehicle Context Tag -->
+<div class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-full border border-outline-variant space-x-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">KA-1025 [Emerald truck]</span>
+</div>
+<section class="space-y-4">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                이렇게 이해했어요
+            </h2>
+<!-- Original Voice Text Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-sm relative overflow-hidden">
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-primary-container rounded-full opacity-20"></div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">record_voice_over</span>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed relative z-10">
+                        "앞에 산에서 돌이 떨어져서 2개 차로가 막혀 있어요."
+                    </p>
+</div>
+</div>
+<!-- AI Structured Data Bento Box -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-error-container/20 border border-error-container rounded-xl p-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span> 유형
+                    </span>
+<span class="font-title-md text-title-md text-on-surface">도로 장애 / 낙석</span>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">traffic</span> 영향
+                    </span>
+<span class="font-title-md text-title-md text-on-surface">2개 차로 통제</span>
+</div>
+<div class="col-span-2 bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> 위치 &amp; 시간
+                    </span>
+<div class="flex justify-between items-end mt-1">
+<span class="font-title-md text-title-md text-on-surface">현재 위치 기반</span>
+<span class="font-body-md text-body-md text-secondary">14:04</span>
+</div>
+</div>
+</div>
+<!-- Map Preview -->
+<div class="mt-4 rounded-xl border border-outline-variant overflow-hidden h-40 relative group">
+<img class="w-full h-full object-cover" data-alt="A clean, modern top-down map interface showing a mountainous road in Seoul. The map style is minimal, using a light mode aesthetic with white and light grey backgrounds, subtle road outlines, and a distinct red warning marker indicating a rockfall hazard on a multi-lane highway. High clarity, logistics dashboard style." data-location="Seoul Mountainside Road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrZOsF_6qRAxB9-CSKojXGmtKWcuRduw_Gs57BT1L8Lg2CbG_UvrbhJEXS9oxXWj79_UxWBJPgTvdx5b3BVU1Ww0ClQxIr8occp1xqCHJdaCIXnWvBxAO3mrxmw7FR64TslmePyTQwZ_ukxfzWV_vZnngfR40-TY_sOhRXvI7AxZtlIjfGXPgNfRSCm8ArlPvnoL0A0Qea32aKq1TsbtTkJlgo7JL47BQjWgx7UlziNMu-lBxF7MG5">
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent flex items-end p-3">
+<button class="bg-surface-container-lowest text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant shadow-sm flex items-center gap-1 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[16px]">zoom_out_map</span> 지도 크게 보기
+                    </button>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant p-margin-mobile z-40 pb-safe">
+<div class="max-w-2xl mx-auto flex gap-3">
+<button class="flex-1 min-h-touch-target-min bg-surface-container-lowest border border-outline-variant text-on-surface font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">edit</span>
+                    수정
+                </button>
+<button class="flex-1 min-h-touch-target-min bg-surface-container-lowest border border-outline-variant text-on-surface font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">mic_external_on</span><div class="flex flex-col items-center leading-tight"><span class="text-label-sm">다시</span><span class="text-label-sm">입력</span></div></button>
+<button class="flex-[2] min-h-touch-target-min bg-primary-container text-on-primary-container font-title-md text-title-md font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>제보
+                </button>
+</div>
+</div>
+</main>
+
+
+</body></html>

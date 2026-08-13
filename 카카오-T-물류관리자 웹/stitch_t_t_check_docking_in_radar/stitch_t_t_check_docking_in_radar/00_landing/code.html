@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>카카오 T 화물 - Landing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8e9",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-surface": "#1a1c1d",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dadadb",
+                      "primary": "#6a5f00",
+                      "on-tertiary-fixed": "#00210d",
+                      "outline-variant": "#cdc7aa",
+                      "primary-container": "#fee500",
+                      "primary-fixed": "#fde400",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#6a5f00",
+                      "outline": "#7c775f",
+                      "background": "#f9f9fa",
+                      "surface-container": "#eeeeef",
+                      "on-tertiary-container": "#00743e",
+                      "tertiary-container": "#84fbab",
+                      "on-surface-variant": "#4b4732",
+                      "tertiary-fixed-dim": "#67dd91",
+                      "surface": "#f9f9fa",
+                      "inverse-primary": "#dec800",
+                      "on-secondary-container": "#636262",
+                      "inverse-on-surface": "#f0f1f2",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#504700",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#84faab",
+                      "primary-fixed-dim": "#dec800",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-container": "#e2dfde",
+                      "secondary": "#5f5e5e",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-container-highest": "#e2e2e3",
+                      "tertiary": "#006d3a",
+                      "on-background": "#1a1c1d",
+                      "on-primary-fixed": "#201c00",
+                      "surface-variant": "#e2e2e3",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f9f9fa",
+                      "on-primary-container": "#716600",
+                      "inverse-surface": "#2f3132",
+                      "on-tertiary-fixed-variant": "#00522a",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f3f4",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "16px",
+                      "touch-target-min": "52px",
+                      "margin-desktop": "32px",
+                      "sidebar-width": "240px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Hanken Grotesk"],
+                      "title-md": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "display-lg": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- Header -->
+<header class="bg-surface border-b border-outline-variant h-[64px] flex items-center px-margin-desktop sticky top-0 z-40">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">카카오 T 화물</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-desktop gap-12 max-w-6xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="text-center w-full max-w-3xl space-y-6">
+<h1 class="font-display-lg text-display-lg text-on-surface">수락 전에는 믿을 수 있게,<br>운송 중에는 놓치지 않게.</h1>
+<p class="font-body-lg text-body-lg text-secondary">프리미엄 물류 생태계를 위한 체계적인 데이터 기반 운영 플랫폼</p>
+</section>
+<!-- Entry Cards (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl"><!-- Card 1: Manager Web -->
+<div class="bg-surface border border-outline-variant rounded-xl p-8 flex flex-col items-start gap-4 hover:border-outline transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[160px] text-primary">dashboard</span>
+</div>
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center mb-2 z-10">
+<span class="material-symbols-outlined text-on-primary-container">desktop_mac</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface z-10">관리자·운영 웹</h2>
+<p class="font-body-md text-body-md text-secondary z-10">실시간 관제부터 T-Check 관리, 리포트까지 체계적인 물류 관리를 시작하세요.</p>
+<div class="mt-auto pt-6 z-10 w-full">
+<button class="w-full bg-primary-container text-on-background font-title-md text-title-md py-3 rounded flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors">
+                        대시보드 열기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Driver App -->
+<div class="bg-surface border border-outline-variant rounded-xl p-8 flex flex-col items-start gap-4 hover:border-outline transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[160px] text-primary">local_shipping</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center mb-2 z-10">
+<span class="material-symbols-outlined text-on-surface">smartphone</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface z-10">차주 앱</h2>
+<p class="font-body-md text-body-md text-secondary z-10">빠른 배차 수락, 명확한 운송 프로세스. 안심하고 화물 운송에 집중하세요.</p>
+<div class="mt-auto pt-6 z-10 w-full">
+<button class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-title-md text-title-md py-3 rounded flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">앱으로 연결 <span class="material-symbols-outlined text-[20px]">open_in_new</span></button>
+</div>
+</div>
+<!-- Card 3: Shipper Web -->
+<div class="bg-surface border border-outline-variant rounded-xl p-8 flex flex-col items-start gap-4 hover:border-outline transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[160px] text-primary">inventory_2</span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center mb-2 z-10">
+<span class="material-symbols-outlined text-on-surface">business</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface z-10">화주 전용 웹</h2>
+<p class="font-body-md text-body-md text-secondary z-10">화물 등록부터 실시간 정산까지, 투명하고 간편한 화주 통합 관리 시스템을 경험하세요.</p>
+<div class="mt-auto pt-6 z-10 w-full">
+<button class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-title-md text-title-md py-3 rounded flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">화주 웹 열기 <span class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+</div>
+</div></section>
+<!-- Bottom Process -->
+<section class="w-full max-w-5xl mt-12 bg-surface border border-outline-variant rounded-xl p-8 overflow-x-auto">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 text-center">신뢰 기반 운송 프로세스</h3>
+<div class="flex items-center justify-between min-w-[800px] relative">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-container-highest -z-10 -translate-y-1/2"></div>
+<!-- Process Steps -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">post_add</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">화물 등록</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-primary-container border-2 border-on-background flex items-center justify-center text-on-background font-bold shadow-sm">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold whitespace-nowrap">T-Check</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">배차 수락</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">운송</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">이상 감지</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">대응</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">star_rate</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">완료 평가</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">update</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">신뢰 데이터 갱신</span>
+</div>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="ko" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WEB-01 운영 대시보드 - 카카오 T 화물</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Hanken Grotesk -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidance -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e8e8e9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-surface": "#1a1c1d",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dadadb",
+                    "primary": "#6a5f00",
+                    "on-tertiary-fixed": "#00210d",
+                    "outline-variant": "#cdc7aa",
+                    "primary-container": "#fee500",
+                    "primary-fixed": "#fde400",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#6a5f00",
+                    "outline": "#7c775f",
+                    "background": "#f9f9fa",
+                    "surface-container": "#eeeeef",
+                    "on-tertiary-container": "#00743e",
+                    "tertiary-container": "#84fbab",
+                    "on-surface-variant": "#4b4732",
+                    "tertiary-fixed-dim": "#67dd91",
+                    "surface": "#f9f9fa",
+                    "inverse-primary": "#dec800",
+                    "on-secondary-container": "#636262",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#504700",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#84faab",
+                    "primary-fixed-dim": "#dec800",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-container": "#e2dfde",
+                    "secondary": "#5f5e5e",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container-highest": "#e2e2e3",
+                    "tertiary": "#006d3a",
+                    "on-background": "#1a1c1d",
+                    "on-primary-fixed": "#201c00",
+                    "surface-variant": "#e2e2e3",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f9f9fa",
+                    "on-primary-container": "#716600",
+                    "inverse-surface": "#2f3132",
+                    "on-tertiary-fixed-variant": "#00522a",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f4",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "touch-target-min": "52px",
+                    "margin-desktop": "32px",
+                    "sidebar-width": "240px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "title-md": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "display-lg": ["40px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for data tables */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dadadb;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c8c6c5;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex">
+<!-- Shared Component: SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface border-r border-outline-variant flex flex-col py-margin-desktop z-40">
+<!-- Header / Branding -->
+<div class="px-6 mb-8 flex flex-col"><div class="flex items-center gap-3 mb-2"><div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary-container fill">local_shipping</span></div><div class="flex flex-col"><span class="font-headline-lg text-headline-lg font-bold text-on-surface">카카오 T 화물</span><span class="font-label-sm text-label-sm text-secondary">물류 관리자</span></div></div></div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 px-4 flex flex-col space-y-1 overflow-y-auto">
+<!-- ACTIVE: 관제 현황 (Index 0) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 transition-colors opacity-100" href="#">
+<span class="material-symbols-outlined fill">dashboard</span>
+<span class="font-body-md text-body-md whitespace-nowrap">관제 현황</span>
+</a>
+<!-- INACTIVE TABS -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md whitespace-nowrap">실시간 운송</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="font-body-md text-body-md whitespace-nowrap">이슈 대응</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-body-md text-body-md whitespace-nowrap">T-Check 관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span class="font-body-md text-body-md whitespace-nowrap">차주 내부관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">dock</span>
+<span class="font-body-md text-body-md whitespace-nowrap">도크 관리</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">business</span>
+<span class="font-body-md text-body-md whitespace-nowrap">화주 현황</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-body-md text-body-md whitespace-nowrap">리포트</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md whitespace-nowrap">시스템 설정</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[240px] flex flex-col h-screen overflow-hidden bg-background">
+<!-- Shared Component: TopAppBar -->
+<header class="flex justify-between items-center px-margin-desktop h-[64px] bg-surface border-b border-outline-variant shrink-0 z-30">
+<!-- Left side empty to let sidebar shine, or breadcrumb if needed -->
+<div class="flex items-center">
+<h2 class="font-title-md text-title-md font-bold text-on-surface">운영 대시보드</h2>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button aria-label="notifications" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary outline-none flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="help_outline" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all focus:ring-2 focus:ring-primary outline-none flex items-center justify-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 hover:bg-surface-container-low rounded-full pr-4 p-1 transition-all focus:ring-2 focus:ring-primary outline-none">
+<img alt="Manager Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOE3_CHTcI4JbYFXcBPDAmrk9cFDtAzm0mBWEMMHFIBf6W_Bl6iTNmK-auABdVFrR1I6bGFuyZm5sPuVVbqVufxngGvBxFQy7mWr4elYYkBLjnAQtF0y4xj5nH9MN_y22T8zvgc65q11g1NT6wmJ9mvLSrDEJgyw857Nrt_kCeZu9h1vfb5kRXoLrBOZRRqasvNpTCpwrS3aO6dM5-fUo599st09yfgY7n7fkHbwqh3YbQBKaU-oRh">
+<span class="font-label-sm text-label-sm text-on-surface">관리자 님</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-margin-desktop">
+<!-- Top KPI Section (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-6">
+<!-- KPI Card 1: 운송 중 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex flex-col justify-between hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="font-title-md text-secondary text-body-lg">운송 중</span>
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center group-hover:bg-primary-container/40 transition-colors">
+<span class="material-symbols-outlined text-primary fill">local_shipping</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-on-surface text-headline-lg">24</span>
+<span class="font-body-md text-body-md text-secondary">건</span>
+</div>
+</div>
+<!-- KPI Card 2: 지연 발생 -->
+<div class="bg-surface-container-lowest border border-error/30 rounded-xl p-5 flex flex-col justify-between hover:border-error transition-colors cursor-pointer group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-error/5 rounded-bl-full -z-10 group-hover:bg-error/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="font-title-md text-secondary text-body-lg">지연 발생</span>
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error fill">timer</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-error text-headline-lg">3</span>
+<span class="font-body-md text-body-md text-secondary">건</span>
+</div>
+</div>
+<!-- KPI Card 3: 긴급 이슈 -->
+<div class="bg-surface-container-lowest border border-error/50 rounded-xl p-5 flex flex-col justify-between hover:border-error transition-colors cursor-pointer group shadow-[0_4px_12px_rgba(186,26,26,0.08)]">
+<div class="flex justify-between items-start mb-4">
+<span class="font-title-md font-bold text-error text-body-lg">긴급 이슈</span>
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined fill">warning</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-error text-headline-lg">1</span>
+<span class="font-body-md text-body-md text-secondary">건</span>
+</div>
+</div>
+<!-- KPI Card 4: 정시 도착률 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 flex flex-col justify-between hover:border-tertiary transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="font-title-md text-secondary text-body-lg">정시 도착률</span>
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary fill">check_circle</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-on-surface text-headline-lg">91</span>
+<span class="font-body-md text-body-md text-secondary">%</span>
+</div>
+<!-- Small progress bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+</div>
+<!-- Main Layout: 2 Columns (Issues Panel & Transport List) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter h-[calc(100vh-280px)] min-h-[500px]">
+<!-- Left Panel: 실시간 이슈 (Real-time Issues) -->
+<div class="xl:col-span-4 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface flex justify-between items-center shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error">notification_important</span>
+<h3 class="font-title-md font-bold text-on-surface text-body-lg">실시간 이슈 패널</h3>
+</div>
+<span class="bg-error-container text-error font-label-sm text-label-sm px-2 py-0.5 rounded-full">4건</span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-3 bg-background">
+<!-- Issue Card: Critical (Matches the required specific order delay) -->
+<div class="bg-surface-container-lowest border-l-4 border-l-error border border-y-outline-variant border-r-outline-variant rounded-r-lg p-4 shadow-sm hover:bg-surface transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm font-bold text-error bg-error/10 px-2 py-1 rounded">지연 경고 (+35분)</span>
+<span class="font-label-sm text-label-sm text-secondary">방금 전</span>
+</div>
+<div class="font-title-md text-on-surface mb-1 text-body-md">KA-1025 배차 지연 발생</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">인천 남동에서 용인 처인으로 이동 중인 차량이 심각한 교통 정체로 지연되고 있습니다.</p>
+<div class="bg-surface-container-low rounded p-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface">person</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">김철수 (5톤 카고)</span>
+</div>
+<button class="font-label-sm text-label-sm font-bold text-primary hover:underline">상세보기</button>
+</div>
+</div>
+<!-- Issue Card: Warning -->
+<div class="bg-surface-container-lowest border-l-4 border-l-primary-container border border-y-outline-variant border-r-outline-variant rounded-r-lg p-4 hover:bg-surface transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm font-bold text-primary-fixed-dim bg-primary-container/20 px-2 py-1 rounded">경로 이탈 의심</span>
+<span class="font-label-sm text-label-sm text-secondary">15분 전</span>
+</div>
+<div class="font-title-md text-on-surface mb-1 text-body-md">KA-1042 지정 경로 이탈</div>
+<p class="font-body-md text-body-md text-on-surface-variant">GPS 신호가 지정된 고속도로를 벗어난 것으로 확인됩니다.</p>
+</div>
+<!-- Map Visual Placeholder for Issues -->
+<div class="mt-4 rounded-lg overflow-hidden border border-outline-variant relative h-32" data-location="Incheon Namdong to Yongin Cheoin Expressway Route Map">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, modern digital map interface centered on a highway route between Incheon and Yongin in South Korea. The map uses a light-mode color palette with subtle gray roads and a bright yellow/primary colored line indicating the planned route. A pulsing red alert icon highlights a specific point of delay on the route. The aesthetic is highly professional, matching a premium logistics dashboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCK4-PzFTjodiDCLnA4bX5RD2WmnRPsxRdOSZ5NwIazg71ZwK9KGobbSYoQgxBDfcE2xiQ7tU14GW0Jbbup8IHfepJWT5l2g42r93K67wvTSw7X0fi-QpuozQgHPq3AZmargBbkwUk_exz-BW1wZqwXiDKtIPQqKS4QGSBxtW5n5GDnejbL850Z8S-gHk-wU8Kc9tSOhO9FuvTuPpMKoa-r0KTX-PXk8gdFgTA5aMaHjVUHnAPZWkBR')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 font-label-sm text-label-sm font-bold text-on-surface bg-surface-container-lowest/90 px-2 py-1 rounded backdrop-blur-sm">실시간 관제 맵</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: 실시간 운송 목록 (Real-time Transport List) -->
+<div class="xl:col-span-8 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface flex justify-between items-center shrink-0">
+<h3 class="font-title-md font-bold text-on-surface text-body-lg">실시간 운송 목록</h3>
+<!-- Table Actions / Filters -->
+<div class="flex gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="pl-9 pr-4 py-1.5 border border-outline-variant rounded-md text-body-md font-body-md w-48 focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="오더번호, 차주 검색" type="text">
+</div>
+<button class="px-3 py-1.5 border border-outline-variant rounded-md flex items-center gap-1 hover:bg-surface-container-low transition-colors text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                                필터
+                            </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="flex-1 overflow-auto bg-surface-container-lowest">
+<table class="w-full text-left whitespace-nowrap font-label-sm">
+<thead class="bg-surface sticky top-0 z-10 border-b border-outline-variant shadow-sm">
+<tr>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">오더 번호</th>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">차주 / 차량</th>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">출발지 → 도착지</th>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">상태</th>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">ETA (지연)</th>
+<th class="px-4 py-3 font-title-md text-label-sm text-secondary font-semibold">T-Check</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Target Row: KA-1025 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-error/5 group">
+<td class="px-4 py-3 font-bold text-on-surface">KA-1025</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">김철수</span>
+<!-- Colored Truck Badge -->
+<span class="inline-flex items-center gap-1 bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                                                5톤 카고
+                                            </span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="">인천 남동</span>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+<span class="font-bold">용인 처인</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center justify-center bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold px-3 py-1 rounded-full">
+                                            운송 중
+                                        </span>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">15:10</span>
+<span class="text-error font-label-sm text-label-sm font-bold bg-error/10 px-1.5 py-0.5 rounded w-max mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+                                                +35분
+                                            </span>
+</div>
+</td>
+<td class="px-4 py-3">
+<!-- T-Check: Emerald Truck Badge -->
+<div class="inline-flex items-center gap-1.5 border border-tertiary bg-tertiary/5 text-tertiary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] fill">verified</span>
+<span class="font-label-sm text-label-sm font-bold">Emerald Truck</span>
+</div>
+</td>
+</tr>
+<!-- Dummy Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-4 py-3 text-on-surface-variant">KA-1026</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">이영희</span>
+<span class="inline-flex items-center gap-1 bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">fire_truck</span>
+                                                11톤 윙바디
+                                            </span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="">경기 평택</span>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+<span class="">부산 강서</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center justify-center bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold px-3 py-1 rounded-full">
+                                            운송 중
+                                        </span>
+</td>
+<td class="px-4 py-3">
+<span class="text-on-surface">18:30</span>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-1.5 border border-outline-variant bg-surface text-secondary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm">일반 확인</span>
+</div>
+</td>
+</tr>
+<!-- Dummy Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-4 py-3 text-on-surface-variant">KA-1027</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-medium">박지민</span>
+<span class="inline-flex items-center gap-1 bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">rv_hookup</span>
+                                                1톤 탑차
+                                            </span>
+</div>
+</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="">서울 마포</span>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_forward</span>
+<span class="">서울 강남</span>
+</div>
+</td>
+<td class="px-4 py-3">
+<span class="inline-flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold px-3 py-1 rounded-full">
+                                            상차 대기
+                                        </span>
+</td>
+<td class="px-4 py-3">
+<span class="text-on-surface-variant">-</span>
+</td>
+<td class="px-4 py-3">
+<div class="inline-flex items-center gap-1.5 border border-tertiary bg-tertiary/5 text-tertiary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] fill">verified</span>
+<span class="font-label-sm text-label-sm font-bold">Emerald Truck</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Placeholder -->
+<div class="p-3 border-t border-outline-variant bg-surface flex justify-between items-center shrink-0">
+<span class="font-label-sm text-label-sm text-secondary">총 128건 중 1-15건 표시</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-high disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary-container text-on-primary-container font-bold text-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container-high text-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container-high text-label-sm">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-secondary hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+</body></html>

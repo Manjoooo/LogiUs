@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="ko" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>카카오 T 화물 - APP-05 운송 진행</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#e2dfde",
+                    "on-tertiary-fixed-variant": "#00522a",
+                    "tertiary-fixed": "#84faab",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container": "#eeeeef",
+                    "primary-container": "#fee500",
+                    "outline": "#7c775f",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1d",
+                    "primary": "#6a5f00",
+                    "secondary": "#5f5e5e",
+                    "surface": "#f9f9fa",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f3f3f4",
+                    "background": "#f9f9fa",
+                    "on-primary-fixed": "#201c00",
+                    "on-secondary-container": "#636262",
+                    "surface-dim": "#dadadb",
+                    "inverse-primary": "#dec800",
+                    "outline-variant": "#cdc7aa",
+                    "surface-container-high": "#e8e8e9",
+                    "surface-variant": "#e2e2e3",
+                    "tertiary-container": "#84fbab",
+                    "tertiary-fixed-dim": "#67dd91",
+                    "on-surface-variant": "#4b4732",
+                    "inverse-surface": "#2f3132",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary": "#006d3a",
+                    "on-primary-fixed-variant": "#504700",
+                    "on-tertiary-fixed": "#00210d",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-tint": "#6a5f00",
+                    "surface-bright": "#f9f9fa",
+                    "on-background": "#1a1c1d",
+                    "primary-fixed-dim": "#dec800",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e2e3",
+                    "on-primary-container": "#716600",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#fde400",
+                    "on-tertiary-container": "#00743e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "touch-target-min": "52px",
+                    "sidebar-width": "240px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "title-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-sm": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "title-md": [
+                            "18px",
+                            {
+                                    "lineHeight": "26px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-safe">
+<!-- Mobile Top App Bar (Simplified for transactional screen) -->
+<header class="md:hidden sticky top-0 w-full h-[64px] bg-surface flex justify-between items-center px-margin-mobile z-40 border-b border-outline-variant">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface mr-4 cursor-pointer" data-icon="arrow_back" onclick="window.history.back()">arrow_back</span>
+<span class="font-title-md text-title-md text-on-surface">운송 진행</span>
+</div>
+</header>
+<!-- Desktop Navigation Shell -->
+<nav class="hidden md:flex flex-col h-full py-margin-desktop bg-surface fixed docked w-sidebar-width h-screen left-0 border-r border-outline-variant z-50">
+<div class="px-margin-desktop mb-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">카카오 T 화물</h1>
+<p class="font-body-md text-body-md text-secondary mt-1">물류 관리자</p>
+</div>
+<ul class="flex flex-col flex-1 px-4 gap-2">
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> 관제 현황
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping" style="font-variation-settings: &quot;FILL&quot; 1;">local_shipping</span> 실시간 운송
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span> 이슈 대응
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-secondary hover:bg-surface-container-high transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span> T-Check 관리
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Desktop Top App Bar -->
+<header class="hidden md:flex docked full-width top-0 h-[64px] bg-surface flex justify-between items-center px-margin-desktop ml-sidebar-width border-b border-outline-variant z-40 fixed w-[calc(100%-240px)]">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-on-surface mr-4 cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h2 class="font-title-md text-title-md text-on-surface">운송 상세: KA-1025</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all p-2 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all p-2 cursor-pointer" data-icon="help_outline">help_outline</span>
+<div class="w-8 h-8 bg-surface-container-highest rounded-full overflow-hidden ml-4">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a logistics manager in a modern office setting. Bright corporate lighting, neutral background. Highly detailed, 4k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATJZqR4xUKuEr4wpLOmcjHGMLUkU7n6tLDPyxkIVVPJekfVtkEuproX7PG3DXu1mWJgnncxvDLOQnsGhr8PZ1sBc3aonNiFkWRPQMw2COnLywc_Ts6dTSFIIFbMWrRSToh9n5XiVzExf8Bsp4u74GbNXA3fixpSm8RMiQ0AnyXe8mg40rhu5srna62XAJtaoZrF30asiLvZtMTTN5CnbsmTdhkearUOwX02_OM9E3-pqjCaobJjMoQ">
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-sidebar-width md:mt-[64px] p-margin-mobile md:p-margin-desktop max-w-[800px] mx-auto pb-[100px]">
+<!-- Summary Card -->
+<section class="bg-surface rounded-xl border border-outline-variant overflow-hidden mb-6">
+<div class="p-6 border-b border-outline-variant">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-1 bg-[#E0F2F1] text-[#00695C] rounded font-label-sm text-label-sm">신뢰 화물</span>
+<span class="font-body-md text-body-md text-secondary">KA-1025</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Emerald Truck&nbsp;<div><span style="letter-spacing: -0.01em;">운행중</span></div></h2>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">도착 예정 시간 (ETA)</p>
+<p class="font-display-lg text-display-lg text-primary">14:35</p>
+</div>
+</div>
+</div>
+<!-- Map Visualization Placeholder -->
+<div class="h-48 w-full bg-surface-container-low relative">
+<div class="w-full h-full bg-cover bg-center absolute inset-0" data-alt="A highly detailed, stylized digital map of a city focusing on a main highway route. The map features a minimalist light mode aesthetic with soft whites and grays, highlighted by a vibrant glowing green route line indicating active transport. 3D isometric perspective, clean corporate design, high contrast, visually striking." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBAxe44k9nOPrLHhOSpQUPeHfWB_ZQuz63HJ4Y2v5bnQPSso3utjJcsLE6m6957uTmx_z_MxPidozb4AYETRyY6TWppkfup1YlMXYNvDxrTYCdgX-f2KBKYQz5hSsed7UKSIF9JyOTj_saK3adeqnXHSMUwN6qRH2eszmtoM0cQ7TVYECefqd3kenijgI-I2kJwFGPbrwVVtLqYN6TpQXLPhSGk0kCULBigmwML2qFmwcEmiqf79Z91&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent"></div>
+</div>
+</section>
+<!-- Vertical Progress Tracker -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 mb-6">
+<h3 class="font-title-md text-title-md text-on-surface mb-6">운송 진행 현황</h3>
+<div class="relative pl-6 border-l-2 border-surface-container-high space-y-8">
+<!-- Stage 1 (Completed) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-4 border-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">1. 배차 완료</h4>
+<p class="font-body-md text-body-md text-secondary">08:00 - 서울 금천 물류센터</p>
+</div>
+</div>
+<!-- Stage 2 (Completed) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-4 border-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">2. 상차 시작</h4>
+<p class="font-body-md text-body-md text-secondary">08:30</p>
+</div>
+</div>
+<!-- Stage 3 (Completed) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-4 border-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">3. 상차 완료</h4>
+<p class="font-body-md text-body-md text-secondary">09:15</p>
+</div>
+</div>
+<!-- Stage 4 (Completed) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-4 border-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">4. 출차 완료</h4>
+<p class="font-body-md text-body-md text-secondary">09:30</p>
+</div>
+</div>
+<!-- Stage 5 (Completed) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-4 border-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">5. 고속도로 진입</h4>
+<p class="font-body-md text-body-md text-secondary">10:00 - 경부고속도로</p>
+</div>
+</div>
+<!-- Stage 6 (Active) -->
+<div class="relative">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center border-4 border-surface shadow-[0_0_0_2px_#6a5f00]"></span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-bold text-primary">6. 운행중</h4>
+<p class="font-body-md text-body-md text-on-surface mt-1">현재 속도: 85km/h | 잔여 거리: 120km</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full w-[60%] rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Stages 7-10 (Pending) -->
+<div class="relative opacity-50">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-surface-container-high text-secondary rounded-full flex items-center justify-center border-4 border-surface"></span>
+<div>
+<h4 class="font-body-lg text-body-lg text-secondary">7. 목적지 IC 진출</h4>
+</div>
+</div>
+<div class="relative opacity-50">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-surface-container-high text-secondary rounded-full flex items-center justify-center border-4 border-surface"></span>
+<div>
+<h4 class="font-body-lg text-body-lg text-secondary">8. 목적지 도착</h4>
+</div>
+</div>
+<div class="relative opacity-50">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-surface-container-high text-secondary rounded-full flex items-center justify-center border-4 border-surface"></span>
+<div>
+<h4 class="font-body-lg text-body-lg text-secondary">9. 하차 완료</h4>
+</div>
+</div>
+<div class="relative opacity-50">
+<span class="absolute -left-[35px] top-0 w-6 h-6 bg-surface-container-high text-secondary rounded-full flex items-center justify-center border-4 border-surface"></span>
+<div>
+<h4 class="font-body-lg text-body-lg text-secondary">10. 운송 종료</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Issue Reporting Actions -->
+<section class="mb-6">
+<h3 class="font-title-md text-title-md text-on-surface mb-3">빠른 이슈 제보</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-surface border border-outline-variant text-on-surface py-3 px-4 rounded-lg font-body-md text-body-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors min-h-[52px]">
+<span class="material-symbols-outlined" data-icon="traffic">traffic</span> 교통정체
+                </button>
+<button class="bg-surface border border-outline-variant text-on-surface py-3 px-4 rounded-lg font-body-md text-body-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors min-h-[52px]">
+<span class="material-symbols-outlined" data-icon="car_crash">car_crash</span> 사고
+                </button>
+<button class="bg-surface border border-outline-variant text-on-surface py-3 px-4 rounded-lg font-body-md text-body-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors min-h-[52px]">
+<span class="material-symbols-outlined" data-icon="thunderstorm">thunderstorm</span> 기상 악화
+                </button>
+<button class="bg-surface border border-outline-variant text-on-surface py-3 px-4 rounded-lg font-body-md text-body-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors min-h-[52px]">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span> 물류센터 혼잡
+                </button>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed right-margin-mobile bottom-[100px] md:bottom-margin-desktop bg-[#FEE500] text-[#191919] px-6 py-4 rounded-full font-title-md text-title-md font-bold shadow-lg flex items-center gap-2 hover:opacity-90 transition-opacity z-40 min-h-touch-target-min">
+<span class="material-symbols-outlined" data-icon="report" style="font-variation-settings: &quot;FILL&quot; 1;">report</span> 현장 이슈 제보
+    </button>
+</body></html>

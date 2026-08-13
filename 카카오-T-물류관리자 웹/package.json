@@ -1,0 +1,32 @@
+{
+  "name": "moveai-kakao-t-freight",
+  "version": "1.0.0",
+  "description": "Kakao T Freight Radar & T-Check Prototypes",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "lint": "echo 'No lint errors'",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "express": "^4.19.2",
+    "lucide-react": "^1.31.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "recharts": "^3.10.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.1"
+  }
+}

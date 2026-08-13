@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>APP-10 완료 평가</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e2dfde",
+                        "on-tertiary-fixed-variant": "#00522a",
+                        "tertiary-fixed": "#84faab",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#eeeeef",
+                        "primary-container": "#fee500",
+                        "outline": "#7c775f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1d",
+                        "primary": "#6a5f00",
+                        "secondary": "#5f5e5e",
+                        "surface": "#f9f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#201c00",
+                        "on-secondary-container": "#636262",
+                        "surface-dim": "#dadadb",
+                        "inverse-primary": "#dec800",
+                        "outline-variant": "#cdc7aa",
+                        "surface-container-high": "#e8e8e9",
+                        "surface-variant": "#e2e2e3",
+                        "tertiary-container": "#84fbab",
+                        "tertiary-fixed-dim": "#67dd91",
+                        "on-surface-variant": "#4b4732",
+                        "inverse-surface": "#2f3132",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#006d3a",
+                        "on-primary-fixed-variant": "#504700",
+                        "on-tertiary-fixed": "#00210d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#6a5f00",
+                        "surface-bright": "#f9f9fa",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#dec800",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#716600",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#fde400",
+                        "on-tertiary-container": "#00743e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "touch-target-min": "52px",
+                        "sidebar-width": "240px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen flex flex-col md:hidden">
+<!-- Top Navigation for Contextual Page -->
+<header class="flex justify-between items-center px-margin-mobile h-[64px] bg-surface border-b border-outline-variant shrink-0">
+<button aria-label="Go Back" class="w-[52px] h-[52px] flex items-center justify-center -ml-4">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-title-md text-title-md text-on-surface flex-1 text-center pr-[36px]">운행 완료</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile py-6 flex flex-col gap-8">
+<!-- Order Header -->
+<div class="text-center">
+<div class="inline-block bg-surface-container-low px-4 py-2 rounded-full mb-4 border border-outline-variant">
+<span class="font-label-sm text-label-sm text-secondary">주문번호</span>
+<span class="font-title-md text-title-md text-on-surface ml-2">KA-1025</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">수고하셨습니다!</h2>
+<p class="font-body-md text-body-md text-secondary">더 나은 배차 환경을 위해<br>이번 운행에 대한 의견을 남겨주세요.</p>
+</div>
+<!-- Step 1: Initial Question -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm flex flex-col gap-6" id="step1">
+<h3 class="font-title-md text-title-md text-on-surface text-center">등록된 화물 정보와 실제가 일치했나요?</h3>
+<div class="flex flex-col gap-3">
+<button class="w-full h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-title-md text-title-md text-on-surface hover:bg-surface-container-low transition-colors" onclick="selectEvaluation('perfect')">
+                    정확했어요
+                </button>
+<button class="w-full h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-title-md text-title-md text-on-surface hover:bg-surface-container-low transition-colors" onclick="showStep2()">
+                    일부 달랐어요
+                </button>
+<button class="w-full h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-title-md text-title-md text-on-surface hover:bg-surface-container-low transition-colors" onclick="showStep2()">
+                    많이 달랐어요
+                </button>
+</div>
+</section>
+<!-- Step 2: Detailed Reasons (Hidden by default) -->
+<section class="hidden bg-surface rounded-xl border border-outline-variant p-6 shadow-sm flex flex-col gap-6" id="step2">
+<h3 class="font-title-md text-title-md text-on-surface text-center">어떤 정보가 달랐나요? <span class="font-body-md text-body-md text-secondary block mt-1">(다중 선택 가능)</span></h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    거리/경로
+                </button>
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    상차장소
+                </button>
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    하차장소
+                </button>
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    화물 크기/중량
+                </button>
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    상/하차 시간
+                </button>
+<button class="reason-btn h-[52px] rounded-lg border border-outline-variant bg-surface flex items-center justify-center font-body-md text-body-md text-on-surface transition-colors" onclick="toggleReason(this)">
+                    기타
+                </button>
+</div>
+<button class="w-full h-[52px] rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md mt-4 disabled:opacity-50" disabled="" id="submitBtn" onclick="showStep3()">
+                평가 제출하기
+            </button>
+</section>
+<!-- Step 3: Confirmation (Hidden by default) -->
+<section class="hidden flex flex-col items-center justify-center py-10 gap-4" id="step3">
+<div class="w-20 h-20 bg-tertiary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[40px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface text-center">평가가 반영됐어요</h3>
+<p class="font-body-md text-body-md text-secondary text-center">기사님의 소중한 의견 감사합니다.<br>더 나은 화물 네트워크를 만들겠습니다.</p>
+<button class="mt-8 w-full h-[52px] rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md" onclick="window.location.reload()">
+                홈으로 돌아가기
+            </button>
+</section>
+</main>
+<script>
+        function selectEvaluation(type) {
+            if (type === 'perfect') {
+                document.getElementById('step1').classList.add('hidden');
+                showStep3();
+            }
+        }
+
+        function showStep2() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('step2').classList.add('flex');
+        }
+
+        function toggleReason(btn) {
+            btn.classList.toggle('border-primary');
+            btn.classList.toggle('bg-primary-container/10');
+            btn.classList.toggle('font-bold');
+            
+            // Check if any reason is selected to enable submit button
+            const anySelected = document.querySelectorAll('.reason-btn.border-primary').length > 0;
+            document.getElementById('submitBtn').disabled = !anySelected;
+        }
+
+        function showStep3() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step2').classList.remove('flex');
+            
+            document.getElementById('step3').classList.remove('hidden');
+            document.getElementById('step3').classList.add('flex');
+        }
+    </script>
+</body></html>
