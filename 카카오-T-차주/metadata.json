@@ -1,0 +1,6 @@
+{
+  "name": "카카오 T 화물",
+  "description": "카카오 T 화물 기사용 실시간 관제 및 배차 관리 애플리케이션",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
