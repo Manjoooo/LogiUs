@@ -1,0 +1,6 @@
+{
+  "name": "카카오 T 화물",
+  "description": "카카오 T 화물 실시간 운송 관제 및 화물 상세 내역 대시보드",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
